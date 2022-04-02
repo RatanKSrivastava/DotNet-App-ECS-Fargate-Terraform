@@ -2,6 +2,10 @@
 
 resource "aws_vpc" "test-vpc" {
   cidr_block = "172.16.0.0/16"
+  enable_dns_hostnames = true
+  tags = {
+    Name = "ASP-VPC"
+  }
 }
 
 # Fetch AZs in the current region

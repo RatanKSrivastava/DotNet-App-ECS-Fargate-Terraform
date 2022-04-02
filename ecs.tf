@@ -29,6 +29,7 @@ resource "aws_ecs_service" "test-service" {
   cluster         = aws_ecs_cluster.test-cluster.id
   task_definition = aws_ecs_task_definition.test-def.arn
   desired_count   = var.app_count
+  health_check_grace_period_seconds = 60
   launch_type     = "FARGATE"
 
   network_configuration {

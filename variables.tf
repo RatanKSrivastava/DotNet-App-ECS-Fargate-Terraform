@@ -1,11 +1,10 @@
 variable "aws_region" {
-  default     = "us-west-2"
+  type        = string
   description = "aws region where our resources going to create choose"
-  #replace the region as suits for your requirement
 }
 
 variable "az_count" {
-  default     = "2"
+  type        = string
   description = "number of availability zones in above region"
 }
 
@@ -15,17 +14,17 @@ variable "ecs_task_execution_role" {
 }
 
 variable "app_image" {
-  default     = "paawanyadav/aspnewer:latest"
+  type        = string
   description = "docker image to run in this ECS cluster"
 }
 
 variable "app_port" {
-  default     = "80"
+  type        = string
   description = "portexposed on the docker image"
 }
 
 variable "app_count" {
-  default     = "3" #choose 2 bcz i have choosen 2 AZ
+  type        = string
   description = "numer of docker containers to run"
 }
 
@@ -43,3 +42,7 @@ variable "fargate_memory" {
   description = "Fargate instance memory to provision (in MiB) not MB"
 }
 
+
+
+
+# RDS variables 
